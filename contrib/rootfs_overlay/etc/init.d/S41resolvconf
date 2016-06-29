@@ -1,0 +1,34 @@
+#!/bin/sh
+#
+# Routing....
+#
+
+# Debian ifupdown needs the /run/network lock directory
+ 
+
+case "$1" in
+  start)
+ 	echo "Starting resolve conf..."
+ 	LISTDNS=$(sed -n "/iface eth0/!b;:x;n;/dns-nameservers/s/^[[:space:]]*dns-nameservers \(.*\)/\1/p;/iface/b;bx" /etc/network/interfaces)
+ 	: > /tmp/resolv.conf
+ 	for ip in ${LISTDNS}; do
+	  echo "nameserver ${ip}" >> /tmp/resolv.conf
+  done
+  GATEWAY=$(sed -n "/iface eth0/!b;:x;n;/gateway/s/^[[:space:]]*gateway \(.*\)/\1/p;/iface/b;bx" /etc/network/interfaces)
+  route add default gw ${GATEWAY} 
+  #eth0
+	;;
+  stop)
+	printf "Stopping routing..."
+	;;
+  restart|reload)
+	"$0" stop
+	"$0" start
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
+
+exit $?
+

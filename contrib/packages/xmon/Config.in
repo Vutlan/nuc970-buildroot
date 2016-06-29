@@ -1,0 +1,6 @@
+config BR2_PACKAGE_XMON
+        bool "xmon"
+        help
+          This is the eXpadable Monitoring system
+
+          http://vutlan.com

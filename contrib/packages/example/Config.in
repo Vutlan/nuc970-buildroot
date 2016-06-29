@@ -1,0 +1,6 @@
+config BR2_PACKAGE_EXAMPLE
+        bool "example"
+        help
+          This is a example
+
+          http://example.com

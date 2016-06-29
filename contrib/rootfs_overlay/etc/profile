@@ -1,0 +1,33 @@
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+
+if [ "$PS1" ]; then
+	if [ "`id -u`" -eq 0 ]; then
+		export PS1='\u@\h \w# '
+	else
+		export PS1='\u@\h \w$ '
+	fi
+fi
+
+export PAGER='/bin/more '
+export EDITOR='/bin/vi'
+
+# Source configuration files from /etc/profile.d
+for i in /etc/profile.d/*.sh ; do
+	if [ -r "$i" ]; then
+		. $i
+	fi
+	unset i
+done
+
+export XMON_DIR="/opt/xmon"
+export PATH=$PATH:$XMON_DIR/bin
+#ld.so.conf is not working yet
+export LD_LIBRARY_PATH=$XMON_DIR/lib
+
+# add aliases
+alias ll='ls $LS_OPTIONS -l'
+alias l='ls $LS_OPTIONS -lA'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+

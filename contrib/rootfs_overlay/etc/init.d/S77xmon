@@ -1,0 +1,22 @@
+#!/bin/sh
+#
+# Start/stop xmon
+#
+
+case "$1" in
+  start)
+	echo "Starting xmon:"
+	/opt/xmon/bin/xmon.sh start
+	;;
+  stop)
+	echo "Stopping xmon:"
+	/opt/xmon/bin/xmon.sh stop
+	;;
+  restart|reload)
+	"$0" stop
+	"$0" start
+	;;
+  *)
+	echo "Usage: $0 {start|stop|restart}"
+	exit 1
+esac
