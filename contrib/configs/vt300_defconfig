@@ -13,6 +13,7 @@ BR2_TARGET_GENERIC_GETTY_PORT="ttyS0"
 # BR2_TARGET_GENERIC_REMOUNT_ROOTFS_RW is not set
 BR2_ROOTFS_OVERLAY="../contrib/rootfs_overlay"
 BR2_ROOTFS_POST_BUILD_SCRIPT="../contrib/post_build.sh"
+BR2_GLOBAL_PATCH_DIR="../contrib/patches"
 BR2_LINUX_KERNEL=y
 BR2_LINUX_KERNEL_CUSTOM_GIT=y
 BR2_LINUX_KERNEL_CUSTOM_REPO_URL="git@github.com:Vutlan/Skycontrol-kernel.git"
