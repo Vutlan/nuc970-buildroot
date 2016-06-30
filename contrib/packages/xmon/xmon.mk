@@ -1,10 +1,10 @@
-#XMON_VERSION=0.1
-#XMON_SOURCE = xmon-$(XMON_VERSION).tar.gz
-#XMON_SITE_METHOD=local
-#XMON_SITE=$(XMON_PKGDIR)
-#XMON_OVERRIDE_SRCDIR = $(XMON_PKGDIR)
-XMON_OVERRIDE_SRCDIR = /home/serega/MyWork/nuc970/contrib/work/xmon
-XMON_OVERRIDE_RSYNC = yes
+XMON_VERSION = master
+XMON_SITE = git@github.com:Vutlan/XMON.git
+XMON_SITE_METHOD = git
+
+#local building
+#XMON_OVERRIDE_SRCDIR = /home/serega/MyWork/nuc970/contrib/work/xmon
+#XMON_OVERRIDE_RSYNC = yes
 
 XMOD_INSTALL_STAGING = YES
 XMOD_INSTALL_TARGET = YES
