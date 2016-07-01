@@ -20,16 +20,16 @@ choice
 		bool "binutils 2.25.1"
 
 	config BR2_BINUTILS_VERSION_2_26_X
-		bool "binutils 2.26"
+		bool "binutils 2.26.1"
 
 endchoice
 
 config BR2_BINUTILS_VERSION
 	string
-	default "arc-2016.03"	if BR2_arc
+	default "arc-2016.09-eng005"	if BR2_arc
 	default "2.24"		if BR2_BINUTILS_VERSION_2_24_X
 	default "2.25.1"	if BR2_BINUTILS_VERSION_2_25_X
-	default "2.26"		if BR2_BINUTILS_VERSION_2_26_X
+	default "2.26.1"	if BR2_BINUTILS_VERSION_2_26_X
 
 config BR2_BINUTILS_ENABLE_LTO
 	bool
