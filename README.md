@@ -1,4 +1,4 @@
-# nuc970buildroot
+# nuc970-buildroot
 Custom buildroot project for VT300(NUC97x)
 
 Building:

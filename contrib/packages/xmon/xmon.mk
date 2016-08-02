@@ -1,3 +1,4 @@
+#git
 XMON_VERSION = master
 XMON_SITE = git@github.com:Vutlan/XMON.git
 XMON_SITE_METHOD = git
@@ -6,10 +7,23 @@ XMON_SITE_METHOD = git
 #XMON_OVERRIDE_SRCDIR = /home/serega/MyWork/nuc970/contrib/work/xmon
 #XMON_OVERRIDE_RSYNC = yes
 
-XMOD_INSTALL_STAGING = YES
-XMOD_INSTALL_TARGET = YES
-#XMOD_CONF_OPTS = -DBUILD_DEMOS=ON
-#XMOD_DEPENDENCIES = libglib2 host-pkgconf
+XMON_INSTALL_STAGING = YES
+XMON_INSTALL_TARGET = YES
+
+XMON_CONF_OPTS =
+#XMON_DEPENDENCIES = libglib2 host-pkgconf
+
+ifeq ($(BR2_PACKAGE_XMON_VUTLAN),y)
+  XMON_CONF_OPTS += -DXMON_BRANDNAME="vutlan"
+endif
+
+ifeq ($(BR2_PACKAGE_XMON_DIDACTUM),y)
+  XMON_CONF_OPTS += -DXMON_BRANDNAME="didactum"
+endif
+
+ifeq ($(BR2_PACKAGE_XMON_BKT),y)
+  XMON_CONF_OPTS += -DXMON_BRANDNAME="bkt"
+endif
 
 #define XMON_INSTALL_STAGING_CMDS
 #        echo "Install staging"
