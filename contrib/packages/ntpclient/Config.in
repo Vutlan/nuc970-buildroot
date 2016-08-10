@@ -3,4 +3,4 @@ config BR2_PACKAGE_NTPCLIENT
         help
           This is the ntpclient
 
-          hhttp://doolittle.icarus.com/ntpclient/
+          http://doolittle.icarus.com/ntpclient/

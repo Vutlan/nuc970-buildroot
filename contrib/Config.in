@@ -2,3 +2,5 @@
 source "$BR2_EXTERNAL/packages/ntpclient/Config.in"
 source "$BR2_EXTERNAL/packages/xmon/Config.in"
 source "$BR2_EXTERNAL/packages/zic/Config.in"
+
+source "$BR2_EXTERNAL/packages/nucpackgen/Config.in.host"
