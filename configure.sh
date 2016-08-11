@@ -13,3 +13,5 @@ make BR2_EXTERNAL=${CONTRIB_PATH} -C ${BUILDROOT_PATH} O=${OUTPUT_PATH} BR2_DEFC
 # 2) savedefconfig
 #make -C ${BUILDROOT_PATH} O=${OUTPUT_PATH} BR2_DEFCONFIG=${DEFCONFIG_FILE} savedefconfig
 
+# 3) how update linux defconfig
+#./build.sh linux-update-defconfig
