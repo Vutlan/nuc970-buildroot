@@ -1,0 +1,6 @@
+config BR2_PACKAGE_HOST_NUCPACKGEN
+        bool "nucpackgen"
+        help
+          This is the host utility for NucWriter PACK generating
+
+          https://github.com/Vutlan/NucPackGen
