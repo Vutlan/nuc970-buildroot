@@ -19,11 +19,11 @@ define ZIC_INSTALL_TARGET_CMDS
 #	$(INSTALL) -D -m 644 $(@D)/tzfile.h $(TARGET_DIR)/usr/include/tzfile.h
 endef
 
-define XMON_CLEAN_CMDS
+define ZIC_CLEAN_CMDS
         $(MAKE) -C $(@D) clean
 endef
 
-define XMON_UNINSTALL_TARGET_CMDS
+define ZIC_UNINSTALL_TARGET_CMDS
         rm -f $(TARGET_DIR)/usr/sbin/zic
 endef
 
