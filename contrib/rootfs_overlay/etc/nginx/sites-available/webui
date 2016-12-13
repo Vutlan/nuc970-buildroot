@@ -24,60 +24,65 @@
         client_max_body_size 16m;
 
         location / {
-            root   /opt/xmon/www;
-            index  index.html index.htm;
+          root   /opt/xmon/www;
+          index  index.html index.htm;
         }
 
-		location /sdcard/ {
-			autoindex on;
-			root   /opt/xmon/www;
-		}
+		    location /sdcard/ {
+			    autoindex on;
+			    root   /opt/xmon/www;
+		    }
+		    
+		    location /usbflash/ {
+			    autoindex on;
+			    root   /opt/xmon/www;
+		    }
 
         location = /engine.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-                #fastcgi_pass 127.0.0.1:9000; 
-                #fastcgi_pass localhost:9000; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          #fastcgi_pass 127.0.0.1:9000; 
+          #fastcgi_pass localhost:9000; 
         }
 
 
         location = /map.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
         }
 
         location = /upload-map.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
         }
 
         location = /devtype.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
         }
 
         location = /settings.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
         }
 
         location = /image.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
         }
 
         location = /rss.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
         }
 
         location = /db.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
         }
 
         location = /dump.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
         }
 
         location = /upload-db.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
         }
 
         location = /upload-firmware.htm {
-                fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
         }
 
         error_page  404              /404.html;
@@ -86,7 +91,7 @@
         #
         error_page   500 502 503 504  /50x.html;
         location = /50x.html {
-            root /opt/xmon/www;
+          root /opt/xmon/www;
         }
     }
 

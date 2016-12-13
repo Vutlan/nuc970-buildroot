@@ -1,6 +1,7 @@
 #git
 XMON_VERSION = master
-XMON_SITE = git@github.com:Vutlan/XMON.git
+#XMON_SITE = git@github.com:Vutlan/XMON.git
+XMON_SITE = https://github.com/Vutlan/XMON.git
 XMON_SITE_METHOD = git
 
 #local building
