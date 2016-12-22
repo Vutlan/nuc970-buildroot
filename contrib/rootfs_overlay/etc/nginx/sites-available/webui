@@ -1,97 +1,97 @@
- server {
-		listen 80;
-		# spdy
+server {
+  listen 80;
+#  spdy
 
-		ssl_certificate      /opt/xmon/etc/nginx/cert.pem;
-		ssl_certificate_key  /opt/xmon/etc/nginx/cert.key;
-	
-		ssl_session_cache    shared:SSL:1m;
-		ssl_session_timeout  24h;
-		ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-	
-		#ssl_ciphers  HIGH:!aNULL:!MD5;
-		#ssl_prefer_server_ciphers  on;
-	
-		ssl_ciphers kEECDH+AES128:kEECDH:kEDH:-3DES:kRSA+AES128:kEDH+3DES:DES-CBC3-SHA:!RC4:!aNULL:!eNULL:!MD5:!EXPORT:!LOW:!SEED:!CAMELLIA:!IDEA:!PSK:!SRP:!SSLv2;
-		ssl_prefer_server_ciphers on;
-		#add_header Strict-Transport-Security "max-age=31536000;";
-		#add_header Content-Security-Policy-Report-Only "default-src https:; script-src https: 'unsafe-eval' 'unsafe-inline'; style-src https: 'unsafe-inline'; img-src https: data:; font-src https: data:; report-uri /csp-report";
+  ssl_certificate      /opt/xmon/etc/nginx/cert.pem;
+  ssl_certificate_key  /opt/xmon/etc/nginx/cert.key;
 
-	    server_name  localhost;
+  ssl_session_cache    shared:SSL:1m;
+  ssl_session_timeout  24h;
+  ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
-        charset utf-8;
-        
-        client_max_body_size 16m;
+  #ssl_ciphers  HIGH:!aNULL:!MD5;
+  #ssl_prefer_server_ciphers  on;
 
-        location / {
-          root   /opt/xmon/www;
-          index  index.html index.htm;
-        }
+  ssl_ciphers kEECDH+AES128:kEECDH:kEDH:-3DES:kRSA+AES128:kEDH+3DES:DES-CBC3-SHA:!RC4:!aNULL:!eNULL:!MD5:!EXPORT:!LOW:!SEED:!CAMELLIA:!IDEA:!PSK:!SRP:!SSLv2;
+  ssl_prefer_server_ciphers on;
+  #add_header Strict-Transport-Security "max-age=31536000;";
+  #add_header Content-Security-Policy-Report-Only "default-src https:; script-src https: 'unsafe-eval' 'unsafe-inline'; style-src https: 'unsafe-inline'; img-src https: data:; font-src https: data:; report-uri /csp-report";
 
-		    location /sdcard/ {
-			    autoindex on;
-			    root   /opt/xmon/www;
-		    }
-		    
-		    location /usbflash/ {
-			    autoindex on;
-			    root   /opt/xmon/www;
-		    }
+  server_name  localhost;
 
-        location = /engine.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-          #fastcgi_pass 127.0.0.1:9000; 
-          #fastcgi_pass localhost:9000; 
-        }
+  charset utf-8;
 
+  client_max_body_size 16m;
 
-        location = /map.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-        }
+  location / {
+    root   /opt/xmon/www;
+    index  index.html index.htm;
+  }
 
-        location = /upload-map.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-        }
+  location /sdcard/ {
+    autoindex on;
+    root   /opt/xmon/www;
+  }
 
-        location = /devtype.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-        }
+  location /usbflash/ {
+    autoindex on;
+    root   /opt/xmon/www;
+  }
 
-        location = /settings.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-        }
+  location = /engine.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+    #fastcgi_pass 127.0.0.1:9000; 
+    #fastcgi_pass localhost:9000; 
+  }
 
-        location = /image.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-        }
+  location = /map.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+  }
 
-        location = /rss.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-        }
+  location = /upload-map.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+  }
 
-        location = /db.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-        }
+  location = /devtype.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+  }
 
-        location = /dump.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-        }
+  location = /settings.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+  }
 
-        location = /upload-db.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-        }
+  location = /image.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+  }
 
-        location = /upload-firmware.htm {
-          fastcgi_pass  unix:/run/xmon/fcgi.socket; 
-        }
+  location = /rss.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+  }
 
-        error_page  404              /404.html;
+  location = /db.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+  }
 
-        # redirect server error pages to the static page /50x.html
-        #
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-          root /opt/xmon/www;
-        }
-    }
+  location = /dump.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+  }
 
+  location = /upload-db.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+  }
+
+  location = /upload-firmware.htm {
+    fastcgi_pass  unix:/run/xmon/fcgi.socket; 
+  }
+
+  error_page  404              /404.html;
+  location = /404.html {
+    root /opt/xmon/www;
+  }
+  # redirect server error pages to the static page /50x.html
+  #
+  error_page   500 502 503 504  /50x.html;
+  location = /50x.html {
+    root /opt/xmon/www;
+  }
+}
