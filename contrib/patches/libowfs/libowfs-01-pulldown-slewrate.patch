@@ -1,0 +1,22 @@
+[PATCH] Default PDSRC = 2.2us (Pull down slew rate)
+
+default PDSRC = 2.2us (Pull down slew rate)
+
+Signed-off-by: Mikhail Kofanov <c5r@yandex.ru>
+
+Index: u-boot-2011.03/config.mk
+===================================================================
+
+--- libowfs-3.1p4.orig/module/owlib/src/c/ow_ds9097U.c	2016-02-04 23:09:53.000000000 +0300
++++ libowfs-3.1p4/module/owlib/src/c/ow_ds9097U.c	2016-12-23 14:28:25.199920999 +0300
+@@ -590,6 +590,9 @@
+ 
+ 	// delay to let line settle
+ 	UT_delay(4);
++	
++	// default PDSRC = 2.2us (Pull down slew rate)
++  RETURN_BAD_IF_BAD(DS2480_configuration_write(PARMSEL_SLEW, PARMSET_Slew2p2Vus, in)) ;
+ 
+ 	// default W1LT = 10us (write-1 low time)
+ 	RETURN_BAD_IF_BAD(DS2480_configuration_write(PARMSEL_WRITE1LOW, PARMSET_Write10us, in)) ;
+
