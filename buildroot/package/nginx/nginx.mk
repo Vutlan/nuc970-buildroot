@@ -248,7 +248,7 @@ define NGINX_CONFIGURE_CMDS
 		PKG_CONFIG="$(PKG_CONFIG_HOST_BINARY)" \
 		GDLIB_CONFIG=$(STAGING_DIR)/usr/bin/gdlib-config \
 		./configure $(NGINX_CONF_OPTS) \
-			--with-cc-opt="$(TARGET_CFLAGS) $(NGINX_CFLAGS)"
+			--with-cc-opt="-fPIE -pie $(TARGET_CFLAGS) $(NGINX_CFLAGS)"
 endef
 
 define NGINX_BUILD_CMDS
