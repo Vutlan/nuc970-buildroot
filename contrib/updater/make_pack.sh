@@ -10,7 +10,8 @@ echo "***************************************"
 FILENAME=nucwriterpack
 FILEEXT=bin
 
-rsync -avzh ${BR2_EXTERNAL}/images ${BASE_DIR} > /dev/null 2>&1
+#rsync -avzh ${BR2_EXTERNAL}/images ${BASE_DIR} > /dev/null 2>&1
+cp -f ${BR2_EXTERNAL}/images/environment.img ${BASE_DIR}/images
 
 #> /dev/null 2>&1
 which nucpackgen || {
