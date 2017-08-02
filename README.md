@@ -3,8 +3,13 @@ Custom buildroot project for VT300(NUC97x)
 
 Building:
 <pre>
-  ./configure.sh
+  ./setup.sh
   ./build.sh
+</pre>
+
+Save current configurations:
+<pre>
+  ./save_configs.sh
 </pre>
 
 for more information use:
