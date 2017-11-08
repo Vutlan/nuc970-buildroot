@@ -1,6 +1,6 @@
 baudrate=115200
 bootargs_jffs2=setenv bootargs noinitrd console=ttyS0,115200n8 root=/dev/mtdblock3 rw rootfstype=jffs2 ethaddr0=${ethaddr} mem=64M
-bootargs_nfs=setenv bootargs noinitrd console=ttyS0,115200n8 root=/dev/nfs rw nfsroot=${serverip}:${nfspath},nfsvers=3 rootwait ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}:vutlan:eth0:off ethaddr0=${ethaddr} mem=64M
+bootargs_nfs=setenv bootargs noinitrd console=ttyS0,115200n8 root=/dev/nfs rw nfsroot=${serverip}:${nfspath},v3,tcp rootwait ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}:${hostname}:eth0:off ethaddr0=${ethaddr} mem=64M
 bootcmd=run bootcmd_jffs2
 bootcmd_jffs2=mw.l 0xB8003060 0xC033; sf probe 0 12500000; sf read 0x7fc0 0x50000 0x310000; run bootargs_jffs2; bootm 0x7fc0
 bootcmd_nfs=mw.l 0xB8003060 0xC033; tftpboot 0x7fc0 nuc970/uImage; run bootargs_nfs; bootm;

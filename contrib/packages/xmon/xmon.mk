@@ -26,6 +26,14 @@ ifeq ($(BR2_PACKAGE_XMON_BKT),y)
   XMON_CONF_OPTS += -DXMON_BRANDNAME="bkt"
 endif
 
+ifeq ($(BR2_PACKAGE_XMON_SCHAFER),y)
+  XMON_CONF_OPTS += -DXMON_BRANDNAME="schafer"
+endif
+
+ifeq ($(BR2_PACKAGE_XMON_LANDE),y)
+  XMON_CONF_OPTS += -DXMON_BRANDNAME="lande"
+endif
+
 #define XMON_INSTALL_STAGING_CMDS
 #        echo "Install staging"
 #        $(MAKE) install

@@ -4,20 +4,25 @@ config BR2_PACKAGE_XMON
           This is the eXpadable Monitoring system
 
           http://vutlan.com
-          
+
 choice
         prompt "Select brandname"
-        help 
+        help
 
 config BR2_PACKAGE_XMON_VUTLAN
-        bool "Vutlan"
-        
+	bool "Vutlan"
+
 config BR2_PACKAGE_XMON_DIDACTUM
-	      bool "Didactum"
-	      
+	bool "Didactum"
+
 config BR2_PACKAGE_XMON_BKT
-	      bool "BKT Elektronic"
-	      
+	bool "BKT Elektronic"
+
+config BR2_PACKAGE_XMON_SCHAFER
+	bool "Schafer"
+
+config BR2_PACKAGE_XMON_LANDE
+	bool "Lande"
+
 endchoice
-          
 
