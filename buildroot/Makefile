@@ -24,6 +24,12 @@
 # You shouldn't need to mess with anything beyond this point...
 #--------------------------------------------------------------
 
+
+# projects place here
+SKY_LOCAL_ROOT = /home/gerner_terner/repo/nuc970-buildroot-master/nuc970-buildroot
+SKY_XMON_ROOT = /home/gerner_terner/repo/XMON/XMON-release
+
+
 # we want bash as shell
 SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
 	 else if [ -x /bin/bash ]; then echo /bin/bash; \

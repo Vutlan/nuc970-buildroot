@@ -4,8 +4,9 @@
 #
 ################################################################################
 
+
 #local building
-MJPEG_STREAMER_OVERRIDE_SRCDIR = /home/serega/MyWork/nuc970/contrib/mjpg-streamer/mjpg-streamer-experimental
+MJPEG_STREAMER_OVERRIDE_SRCDIR = /home/gerner_terner/repo/nuc970-buildroot-master/nuc970-buildroot/contrib/packages/mjpeg-streamer/mjpg-streamer-experimental
 MJPEG_STREAMER_OVERRIDE_RSYNC = yes
 
 MJPEG_STREAMER_DEPENDENCIES = jpeg

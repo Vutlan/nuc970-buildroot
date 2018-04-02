@@ -1,12 +1,12 @@
 #git
-XMON_VERSION = master
-XMON_SITE = git@github.com:Vutlan/XMON.git
+#XMON_VERSION = master
+#XMON_SITE = git@github.com:Vutlan/XMON.git
 #XMON_SITE = https://github.com/Vutlan/XMON.git
-XMON_SITE_METHOD = git
+#XMON_SITE_METHOD = git
 
 #local building
-#XMON_OVERRIDE_SRCDIR = /home/serega/MyWork/nuc970/contrib/work/xmon
-#XMON_OVERRIDE_RSYNC = yes
+XMON_OVERRIDE_SRCDIR = $(SKY_XMON_ROOT)
+XMON_OVERRIDE_RSYNC = yes
 
 XMON_INSTALL_STAGING = YES
 XMON_INSTALL_TARGET = YES
@@ -40,7 +40,7 @@ endif
 #endef
 
 #define XMON_INSTALL_TARGET_CMDS
-#        echo "Install target" 
+#        echo "Install target"
 #        make -f $(@D)/Makefile help
 #        make -f $(@D)/Makefile install
 #endef
