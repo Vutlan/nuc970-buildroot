@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-OPENVPN_VERSION = 2.3.11
+OPENVPN_VERSION = 2.4.6
 OPENVPN_SOURCE = openvpn-$(OPENVPN_VERSION).tar.xz
 OPENVPN_SITE = http://swupdate.openvpn.net/community/releases
 OPENVPN_DEPENDENCIES = host-pkgconf openssl
@@ -47,6 +47,14 @@ OPENVPN_CONF_OPTS += --enable-password-save
 else
 OPENVPN_CONF_OPTS += --disable-password-save
 endif
+
+
+ifeq ($(BR2_PACKAGE_OPENVPN_PKCS11),y)
+OPENVPN_CONF_OPTS += --enable-pkcs11
+else
+OPENVPN_CONF_OPTS += --disable-pkcs11
+endif
+
 
 define OPENVPN_INSTALL_TARGET_CMDS
 	$(INSTALL) -m 755 $(@D)/src/openvpn/openvpn \

@@ -34,4 +34,9 @@ config BR2_PACKAGE_OPENVPN_PWSAVE
 	  Allow --askpass and --auth-user-pass passwords to be read
 	  from a file.
 
+config BR2_PACKAGE_OPENVPN_PKCS11
+	bool "Allow PKCS11"
+	help
+	  Allow PKCS11.
+
 endif

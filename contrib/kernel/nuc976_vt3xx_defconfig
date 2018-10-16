@@ -765,7 +765,7 @@ CONFIG_MII=y
 # CONFIG_NETCONSOLE is not set
 # CONFIG_NETPOLL is not set
 # CONFIG_NET_POLL_CONTROLLER is not set
-# CONFIG_TUN is not set
+CONFIG_TUN=y
 # CONFIG_VETH is not set
 
 #
@@ -827,7 +827,8 @@ CONFIG_ICPLUS_PHY=y
 # CONFIG_FIXED_PHY is not set
 # CONFIG_MDIO_BITBANG is not set
 # CONFIG_MICREL_KS8995MA is not set
-# CONFIG_PPP is not set
+CONFIG_PPP=m
+CONFIG_PPP_ASYNC=m
 # CONFIG_SLIP is not set
 
 #
