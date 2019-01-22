@@ -1,7 +1,7 @@
 #git
 NUCPACKGEN_VERSION = master
-NUCPACKGEN_SITE = git@github.com:Vutlan/NucPackGen.git
-#NUCPACKGEN_SITE = https://github.com/Vutlan/NucPackGen.git
+#NUCPACKGEN_SITE = git@github.com:Vutlan/NucPackGen.git
+NUCPACKGEN_SITE = https://github.com/Vutlan/NucPackGen.git
 NUCPACKGEN_SITE_METHOD = git
 
 #local building

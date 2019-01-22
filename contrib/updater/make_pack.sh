@@ -10,6 +10,9 @@ echo "***************************************"
 FILENAME=nucwriterpack
 FILEEXT=bin
 
+#INIFILE=NUC976DK62Y.ini
+INIFILE=NUC976DK61Y.ini
+
 #rsync -avzh ${BR2_EXTERNAL}/images ${BASE_DIR} > /dev/null 2>&1
 cp -f ${BR2_EXTERNAL}/images/environment.img ${BASE_DIR}/images
 
@@ -17,5 +20,6 @@ cp -f ${BR2_EXTERNAL}/images/environment.img ${BASE_DIR}/images
 which nucpackgen || {
   echo "The nucpackgen is not found in \$PATH"
 } && {
-  nucpackgen -i ${BASE_DIR}/images -d ${HOST_DIR}/usr/share/nucpackgen/sys_cfg/NUC976DK62Y.ini -o ${BASE_DIR}/images/${FILENAME}.${FILEEXT}
+  echo "The nucpackgen use $INIFILE"
+  nucpackgen -i ${BASE_DIR}/images -d ${HOST_DIR}/usr/share/nucpackgen/sys_cfg/${INIFILE} -o ${BASE_DIR}/images/${FILENAME}.${FILEEXT}
 }
