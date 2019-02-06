@@ -45,7 +45,7 @@ rm -fR output/target/opt/xmon
 
 # remove source
 ./build.sh xmon-dirclean
-rm buildroot/dl/xmon-master.tar.gz
+#rm buildroot/dl/xmon-master.tar.gz
 
 #
 # does recreate the output dirs

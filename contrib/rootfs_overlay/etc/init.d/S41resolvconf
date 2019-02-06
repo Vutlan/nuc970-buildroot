@@ -15,7 +15,12 @@ case "$1" in
 	  echo "nameserver ${ip}" >> /tmp/resolv.conf
   done
   GATEWAY=$(sed -n "/iface eth0/!b;:x;n;/gateway/s/^[[:space:]]*gateway \(.*\)/\1/p;/iface/b;bx" /etc/network/interfaces)
-  route add default gw ${GATEWAY} 
+
+  # delete route without metric
+  route del default gw ${GATEWAY}
+  # add with metric
+  route add default gw ${GATEWAY} metric 50
+
   #eth0
 	;;
   stop)

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "*************************************************"
-echo "* Script for make system update (script ver.2.3)"
+echo "* Script for make system update (script ver.2.4)"
 echo "*   tools: ${BR2_EXTERNAL}/updater"
 echo "*   rootfs: ${TARGET_DIR}"
 echo "*   output: ${BASE_DIR}"
@@ -32,8 +32,8 @@ rsync -avzh ${TARGET_DIR}/opt/xmon/recovery ${BASE_DIR}/updater/rootfs/opt/xmon 
 # update system init scripts dir
 rsync -avzh ${TARGET_DIR}/etc/init.d ${BASE_DIR}/updater/rootfs/etc > /dev/null 2>&1
 
-# busybox update file
-cp -f ${TARGET_DIR}/bin/busybox ${BASE_DIR}/updater/rootfs/bin/busybox > /dev/null 2>&1
+# busybox update file - now in kernel patch
+#cp -f ${TARGET_DIR}/bin/busybox ${BASE_DIR}/updater/rootfs/bin/busybox > /dev/null 2>&1
 
 pushd ${BASE_DIR}/updater/ > /dev/null 2>&1
 
