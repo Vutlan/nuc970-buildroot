@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "******************************************"
-echo "* Kernel Update (script ver.1.0)"
+echo "* Kernel Update (script ver.1.1)"
 echo "******************************************"
 
 ./led_error.sh 10000 &
@@ -79,6 +79,9 @@ safe_copy rootfs/usr/lib/libzlog.so.1.2             /usr/lib/libzlog.so.1.2 755
 ln -sf "/usr/lib/libnetsnmpmibs.so.30.0.3"          /usr/lib/libnetsnmpmibs.so.30
 ln -sf "/usr/lib/libpcap.so.1.7.4"                  /usr/lib/libpcap.so.1
 ln -sf "/usr/lib/libzlog.so.1.2"                    /usr/lib/libzlog.so.1
+safe_copy rootfs/usr/lib/libmodbus.so.5.0.5         /usr/lib/libmodbus.so.5.0.5 755
+ln -sf "/usr/lib/libmodbus.so.5.0.5"                /usr/lib/libmodbus.so.5
+ln -sf "/usr/lib/libmodbus.so.5.0.5"                /usr/lib/libmodbus.so
 
 echo "  update /usr/lib/pppd/"
 rm -fR /usr/lib/pppd/

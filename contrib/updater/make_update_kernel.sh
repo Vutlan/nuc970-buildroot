@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "*************************************************"
-echo "* Script for make kernel update (script ver.1.0)"
+echo "* Script for make kernel update (script ver.1.2)"
 echo "*   tools: ${BR2_EXTERNAL}/updater"
 echo "*   rootfs: ${TARGET_DIR}"
 echo "*   output: ${BASE_DIR}"
@@ -38,7 +38,6 @@ rsync -avzh ${TARGET_DIR}/bin ${KERNEL_DIR}/rootfs > /dev/null 2>&1
 #mkdir -p ${KERNEL_DIR}/rootfs/sbin
 #rsync -avzh ${TARGET_DIR}/sbin ${KERNEL_DIR}/rootfs > /dev/null 2>&1
 
-# много лишнего - индивидуальное копирование
 mkdir -p ${KERNEL_DIR}/rootfs/usr/bin
 #rsync -avzh ${TARGET_DIR}/usr/bin ${KERNEL_DIR}/rootfs/usr > /dev/null 2>&1
 cp -f ${TARGET_DIR}/usr/bin/agentxtrap ${KERNEL_DIR}/rootfs/usr/bin/agentxtrap
@@ -53,6 +52,7 @@ rsync -avzh ${TARGET_DIR}/usr/lib/pppd ${KERNEL_DIR}/rootfs/usr/lib > /dev/null 
 cp -f ${TARGET_DIR}/usr/lib/libnetsnmpmibs.so.30.0.3 ${KERNEL_DIR}/rootfs/usr/lib/libnetsnmpmibs.so.30.0.3
 cp -f ${TARGET_DIR}/usr/lib/libpcap.so.1.7.4 ${KERNEL_DIR}/rootfs/usr/lib/libpcap.so.1.7.4
 cp -f ${TARGET_DIR}/usr/lib/libzlog.so.1.2 ${KERNEL_DIR}/rootfs/usr/lib/libzlog.so.1.2
+cp -f ${TARGET_DIR}/usr/lib/libmodbus.so.5.0.5 ${KERNEL_DIR}/rootfs/usr/lib/libmodbus.so.5.0.5
 
 mkdir -p ${KERNEL_DIR}/rootfs/usr/sbin
 cp -f ${TARGET_DIR}/usr/sbin/chat ${KERNEL_DIR}/rootfs/usr/sbin/chat
@@ -66,10 +66,6 @@ cp -f ${TARGET_DIR}/usr/sbin/pppstats ${KERNEL_DIR}/rootfs/usr/sbin/pppstats
 # dhcp scripts
 mkdir -p ${KERNEL_DIR}/rootfs/usr/share/udhcpc
 rsync -avzh ${TARGET_DIR}/usr/share/udhcpc ${KERNEL_DIR}/rootfs/usr/share > /dev/null 2>&1
-
-# push kernel version stamp
-echo "    Vutlan kernel version stamp: 01.02.2019"
-echo "VUTLAN_KERNEL_VERSION=01.02.2019" >> ${KERNEL_DIR}/rootfs/etc/os-release
 
 pushd ${BASE_DIR}/updater/ > /dev/null 2>&1
 

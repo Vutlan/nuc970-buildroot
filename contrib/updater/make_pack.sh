@@ -1,11 +1,11 @@
 #!/bin/bash
 
-echo "***************************************"
-echo "* Script for make NuWriter Pack"
+echo "*************************************************"
+echo "* Script for make NuWriter Pack (script ver.1.0)"
 echo "*   external: ${BR2_EXTERNAL}"
 echo "*   hostdir: ${HOST_DIR}" 
 echo "*   output: ${BASE_DIR}"
-echo "***************************************"
+echo "*************************************************"
 
 FILENAME=nucwriterpack
 FILEEXT=bin
