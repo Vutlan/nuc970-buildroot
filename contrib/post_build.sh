@@ -6,7 +6,9 @@ echo "*   target: ${TARGET_DIR}"
 echo "*************************************************"
 
 #KERNEL_VERSION_STAMP="01.02.2019"
-KERNEL_VERSION_STAMP="12.03.2019"
+#KERNEL_VERSION_STAMP="12.03.2019"
+#KERNEL_VERSION_STAMP="30.04.2019"
+KERNEL_VERSION_STAMP="20.05.2019"
 
 # push kernel version stamp
 echo "    Vutlan kernel version stamp: ${KERNEL_VERSION_STAMP}"

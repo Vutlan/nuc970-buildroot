@@ -1,0 +1,5 @@
+config BR2_PACKAGE_CH34
+        bool "ch34"
+        depends on BR2_LINUX_KERNEL
+        help
+                Linux Kernel Module for CH34 support (USB-RS485).

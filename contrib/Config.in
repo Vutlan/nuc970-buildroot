@@ -5,3 +5,7 @@ source "$BR2_EXTERNAL/packages/xmon/Config.in"
 source "$BR2_EXTERNAL/packages/zic/Config.in"
 
 source "$BR2_EXTERNAL/packages/nucpackgen/Config.in.host"
+
+source "$BR2_EXTERNAL/packages/ch34/Config.in"
+source "$BR2_EXTERNAL/packages/cp210x/Config.in"
+

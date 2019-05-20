@@ -1,0 +1,5 @@
+config BR2_PACKAGE_CP210X
+        bool "cp210x"
+        depends on BR2_LINUX_KERNEL
+        help
+                Linux Kernel Module for CP210x support (USB-RS485).
