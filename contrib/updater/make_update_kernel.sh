@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "*************************************************"
-echo "* Script for make kernel update (script ver.1.2)"
+echo "* Script for make kernel update (script ver.1.3)"
 echo "*   tools: ${BR2_EXTERNAL}/updater"
 echo "*   rootfs: ${TARGET_DIR}"
 echo "*   output: ${BASE_DIR}"
@@ -52,7 +52,7 @@ rsync -avzh ${TARGET_DIR}/usr/lib/pppd ${KERNEL_DIR}/rootfs/usr/lib > /dev/null 
 cp -f ${TARGET_DIR}/usr/lib/libnetsnmpmibs.so.30.0.3 ${KERNEL_DIR}/rootfs/usr/lib/libnetsnmpmibs.so.30.0.3
 cp -f ${TARGET_DIR}/usr/lib/libpcap.so.1.7.4 ${KERNEL_DIR}/rootfs/usr/lib/libpcap.so.1.7.4
 cp -f ${TARGET_DIR}/usr/lib/libzlog.so.1.2 ${KERNEL_DIR}/rootfs/usr/lib/libzlog.so.1.2
-cp -f ${TARGET_DIR}/usr/lib/libmodbus.so.5.0.5 ${KERNEL_DIR}/rootfs/usr/lib/libmodbus.so.5.0.5
+cp -f ${TARGET_DIR}/usr/lib/libmodbus.so.5.1.0 ${KERNEL_DIR}/rootfs/usr/lib/libmodbus.so.5.1.0
 
 mkdir -p ${KERNEL_DIR}/rootfs/usr/sbin
 cp -f ${TARGET_DIR}/usr/sbin/chat ${KERNEL_DIR}/rootfs/usr/sbin/chat
