@@ -9,7 +9,8 @@ echo "*************************************************"
 #KERNEL_VERSION_STAMP="12.03.2019"
 #KERNEL_VERSION_STAMP="30.04.2019"
 #KERNEL_VERSION_STAMP="20.05.2019"
-KERNEL_VERSION_STAMP="17.06.2019"
+#KERNEL_VERSION_STAMP="17.06.2019"
+KERNEL_VERSION_STAMP="11.07.2019"
 
 # push kernel version stamp
 echo "    Vutlan kernel version stamp: ${KERNEL_VERSION_STAMP}"
