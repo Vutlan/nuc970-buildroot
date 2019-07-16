@@ -21,8 +21,8 @@ config BR2_PACKAGE_XMON_BKT
 config BR2_PACKAGE_XMON_SCHAFER
 	bool "Schafer"
 
-config BR2_PACKAGE_XMON_LANDE
-	bool "Lande"
+config BR2_PACKAGE_XMON_RZPRODUCTS
+	bool "RZ-Products"
 
 endchoice
 
