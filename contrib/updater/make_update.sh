@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "*************************************************"
-echo "* Script for make system update (script ver.2.4)"
+echo "* Script for make system update (script ver.2.5)"
 echo "*   tools: ${BR2_EXTERNAL}/updater"
 echo "*   rootfs: ${TARGET_DIR}"
 echo "*   output: ${BASE_DIR}"
@@ -17,6 +17,7 @@ rsync -avzh ${BR2_EXTERNAL}/updater ${BASE_DIR} > /dev/null 2>&1
 # dirs for xmon
 mkdir -p ${BASE_DIR}/updater/rootfs/opt/xmon
 mkdir -p ${BASE_DIR}/updater/rootfs/opt/xmon/etc
+mkdir -p ${BASE_DIR}/updater/rootfs/opt/xmon/etc/radius
 
 # dirs for system
 mkdir -p ${BASE_DIR}/updater/rootfs/bin
@@ -28,6 +29,9 @@ rsync -avzh ${TARGET_DIR}/opt/xmon/etc/services ${BASE_DIR}/updater/rootfs/opt/x
 rsync -avzh ${TARGET_DIR}/opt/xmon/lib ${BASE_DIR}/updater/rootfs/opt/xmon > /dev/null 2>&1
 rsync -avzh ${TARGET_DIR}/opt/xmon/www ${BASE_DIR}/updater/rootfs/opt/xmon > /dev/null 2>&1
 rsync -avzh ${TARGET_DIR}/opt/xmon/recovery ${BASE_DIR}/updater/rootfs/opt/xmon > /dev/null 2>&1
+
+# RADIUS dictionary.local update file
+cp -f ${TARGET_DIR}/opt/xmon/etc/radius/dictionary.local ${BASE_DIR}/updater/rootfs/opt/xmon/etc/radius/dictionary.local > /dev/null 2>&1
 
 # update system init scripts dir
 rsync -avzh ${TARGET_DIR}/etc/init.d ${BASE_DIR}/updater/rootfs/etc > /dev/null 2>&1

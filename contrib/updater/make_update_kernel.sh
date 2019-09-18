@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "*************************************************"
-echo "* Script for make kernel update (script ver.1.3)"
+echo "* Script for make kernel update (script ver.1.4)"
 echo "*   tools: ${BR2_EXTERNAL}/updater"
 echo "*   rootfs: ${TARGET_DIR}"
 echo "*   output: ${BASE_DIR}"
@@ -45,6 +45,7 @@ cp -f ${TARGET_DIR}/usr/bin/poff ${KERNEL_DIR}/rootfs/usr/bin/poff
 cp -f ${TARGET_DIR}/usr/bin/pon ${KERNEL_DIR}/rootfs/usr/bin/pon
 cp -f ${TARGET_DIR}/usr/bin/sendsms ${KERNEL_DIR}/rootfs/usr/bin/sendsms
 cp -f ${TARGET_DIR}/usr/bin/smsd ${KERNEL_DIR}/rootfs/usr/bin/smsd
+cp -f ${TARGET_DIR}/usr/bin/sqlite3 ${KERNEL_DIR}/rootfs/usr/bin/sqlite3
 
 #mkdir -p ${KERNEL_DIR}/rootfs/usr/lib/pppd
 mkdir -p ${KERNEL_DIR}/rootfs/usr/lib
@@ -53,15 +54,16 @@ cp -f ${TARGET_DIR}/usr/lib/libnetsnmpmibs.so.30.0.3 ${KERNEL_DIR}/rootfs/usr/li
 cp -f ${TARGET_DIR}/usr/lib/libpcap.so.1.7.4 ${KERNEL_DIR}/rootfs/usr/lib/libpcap.so.1.7.4
 cp -f ${TARGET_DIR}/usr/lib/libzlog.so.1.2 ${KERNEL_DIR}/rootfs/usr/lib/libzlog.so.1.2
 cp -f ${TARGET_DIR}/usr/lib/libmodbus.so.5.1.0 ${KERNEL_DIR}/rootfs/usr/lib/libmodbus.so.5.1.0
+cp -f ${TARGET_DIR}/usr/lib/libsqlite3.so.0.8.6 ${KERNEL_DIR}/rootfs/usr/lib/libsqlite3.so.0.8.6
 
 mkdir -p ${KERNEL_DIR}/rootfs/usr/sbin
 cp -f ${TARGET_DIR}/usr/sbin/chat ${KERNEL_DIR}/rootfs/usr/sbin/chat
-#cp -f ${TARGET_DIR}/usr/sbin/nginx ${KERNEL_DIR}/rootfs/usr/sbin/nginx
 cp -f ${TARGET_DIR}/usr/sbin/openvpn ${KERNEL_DIR}/rootfs/usr/sbin/openvpn
 cp -f ${TARGET_DIR}/usr/sbin/pppd ${KERNEL_DIR}/rootfs/usr/sbin/pppd
 cp -f ${TARGET_DIR}/usr/sbin/pppdump ${KERNEL_DIR}/rootfs/usr/sbin/pppdump
 cp -f ${TARGET_DIR}/usr/sbin/pppoe-discovery ${KERNEL_DIR}/rootfs/usr/sbin/pppoe-discovery
 cp -f ${TARGET_DIR}/usr/sbin/pppstats ${KERNEL_DIR}/rootfs/usr/sbin/pppstats
+cp -f ${TARGET_DIR}/usr/sbin/nginx ${KERNEL_DIR}/rootfs/usr/sbin/nginx
 
 # dhcp scripts
 mkdir -p ${KERNEL_DIR}/rootfs/usr/share/udhcpc

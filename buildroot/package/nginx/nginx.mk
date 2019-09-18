@@ -4,9 +4,9 @@
 #
 ################################################################################
 
-NGINX_VERSION = 1.10.1
+NGINX_VERSION = 1.16.1
 NGINX_SITE = http://nginx.org/download
-NGINX_LICENSE = BSD-2c
+NGINX_LICENSE = BSD-2-Clause
 NGINX_LICENSE_FILES = LICENSE
 NGINX_DEPENDENCIES = host-pkgconf
 
@@ -234,6 +234,22 @@ NGINX_CONF_OPTS += \
 
 endif # BR2_PACKAGE_NGINX_STREAM
 
+# external modules
+ifeq ($(BR2_PACKAGE_NGINX_UPLOAD),y)
+NGINX_CONF_OPTS += $(addprefix --add-module=,$(NGINX_UPLOAD_DIR))
+NGINX_DEPENDENCIES += nginx-upload
+endif
+
+ifeq ($(BR2_PACKAGE_NGINX_DAV_EXT),y)
+NGINX_CONF_OPTS += --add-module=$(NGINX_DAV_EXT_DIR)
+NGINX_DEPENDENCIES += nginx-dav-ext
+endif
+
+ifeq ($(BR2_PACKAGE_NGINX_NAXSI),y)
+NGINX_DEPENDENCIES += nginx-naxsi
+NGINX_CONF_OPTS += --add-module=$(NGINX_NAXSI_DIR)/naxsi_src
+endif
+
 # Debug logging
 NGINX_CONF_OPTS += $(if $(BR2_PACKAGE_NGINX_DEBUG),--with-debug)
 
@@ -248,7 +264,7 @@ define NGINX_CONFIGURE_CMDS
 		PKG_CONFIG="$(PKG_CONFIG_HOST_BINARY)" \
 		GDLIB_CONFIG=$(STAGING_DIR)/usr/bin/gdlib-config \
 		./configure $(NGINX_CONF_OPTS) \
-			--with-cc-opt="-fPIE -pie $(TARGET_CFLAGS) $(NGINX_CFLAGS)"
+			--with-cc-opt="$(TARGET_CFLAGS) $(NGINX_CFLAGS)"
 endef
 
 define NGINX_BUILD_CMDS

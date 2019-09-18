@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "******************************************"
-echo "* System Update (script ver.2.4)"
+echo "* System Update (script ver.2.6)"
 echo "******************************************"
 
 ./led_error.sh 10000 &
@@ -50,17 +50,19 @@ rm -fR /opt/xmon/www/
 rm -fR /opt/xmon/recovery/
 #rm -fR /etc/init.d/
 
+echo "remove RADIUS dictionary.local"
+rm -f /opt/xmon/etc/radius/dictionary.local
+
 echo "copy new directories: /opt/xmon/"
-# copy directories from opt/... to root /...
 cp -af opt/ /
+
+#echo "copy new directories: /etc/init.d/"
+#cp -af etc/init.d/ /etc/
 
 # copy files one by one, place it here
 #echo "copy new files:"
 #safe_copy etc/init.d/S59snmpd /etc/init.d/S59snmpd 755
 #safe_copy bin/busybox /bin/busybox 755
-
-# copy full directory etc/
-#cp -af etc/ /
 
 rm -f /opt/xmon/bin/xmoncheck.sh
 #cp wd/xmoncheck.sh /opt/xmon/bin/xmoncheck.sh
