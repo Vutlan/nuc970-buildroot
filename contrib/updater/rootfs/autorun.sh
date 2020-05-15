@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "******************************************"
-echo "* System Update (script ver.2.6)"
+echo "* System Update (script ver.2.7)"
 echo "******************************************"
 
 ./led_error.sh 10000 &
@@ -60,9 +60,11 @@ cp -af opt/ /
 #cp -af etc/init.d/ /etc/
 
 # copy files one by one, place it here
-#echo "copy new files:"
+echo "copy new files:"
 #safe_copy etc/init.d/S59snmpd /etc/init.d/S59snmpd 755
 #safe_copy bin/busybox /bin/busybox 755
+safe_copy usr/bin/mjpg_streamer /usr/bin/mjpg_streamer 755
+safe_copy usr/lib/mjpg-streamer/input_uvc.so /usr/lib/mjpg-streamer/input_uvc.so 755
 
 rm -f /opt/xmon/bin/xmoncheck.sh
 #cp wd/xmoncheck.sh /opt/xmon/bin/xmoncheck.sh

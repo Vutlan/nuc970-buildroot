@@ -1,8 +1,8 @@
 CP210X_MODULE_VERSION = 1.0
-#CP210X_SITE = /home/gerner_terner/repo/nuc970-buildroot-master/nuc970-buildroot/contrib/packages/cp210x/src
+#CP210X_SITE = /home/gernerterner/repo/nuc970-buildroot-master/nuc970-buildroot/contrib/packages/cp210x/src
 #CP210X_SITE_METHOD = local
 
-CP210X_OVERRIDE_SRCDIR = /home/gerner_terner/repo/nuc970-buildroot-master/nuc970-buildroot/contrib/packages/cp210x/src
+CP210X_OVERRIDE_SRCDIR = /home/gernerterner/repo/nuc970-buildroot-master/nuc970-buildroot/contrib/packages/cp210x/src
 CP210X_OVERRIDE_RSYNC = yes
 
 #CP210X_LICENSE = GPLv2

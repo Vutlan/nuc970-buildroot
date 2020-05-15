@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "*************************************************"
-echo "* Script for make system update (script ver.2.5)"
+echo "* Script for make system update (script ver.2.6)"
 echo "*   tools: ${BR2_EXTERNAL}/updater"
 echo "*   rootfs: ${TARGET_DIR}"
 echo "*   output: ${BASE_DIR}"
@@ -22,6 +22,10 @@ mkdir -p ${BASE_DIR}/updater/rootfs/opt/xmon/etc/radius
 # dirs for system
 mkdir -p ${BASE_DIR}/updater/rootfs/bin
 mkdir -p ${BASE_DIR}/updater/rootfs/etc
+mkdir -p ${BASE_DIR}/updater/rootfs/usr
+mkdir -p ${BASE_DIR}/updater/rootfs/usr/bin
+mkdir -p ${BASE_DIR}/updater/rootfs/usr/lib
+mkdir -p ${BASE_DIR}/updater/rootfs/usr/lib/mjpg-streamer
 
 # copy sources to target update for xmon
 rsync -avzh ${TARGET_DIR}/opt/xmon/bin ${BASE_DIR}/updater/rootfs/opt/xmon > /dev/null 2>&1
@@ -38,6 +42,10 @@ rsync -avzh ${TARGET_DIR}/etc/init.d ${BASE_DIR}/updater/rootfs/etc > /dev/null 
 
 # busybox update file - now in kernel patch
 #cp -f ${TARGET_DIR}/bin/busybox ${BASE_DIR}/updater/rootfs/bin/busybox > /dev/null 2>&1
+
+# mjpg_streamer update files
+cp -f ${TARGET_DIR}/usr/bin/mjpg_streamer ${BASE_DIR}/updater/rootfs/usr/bin/mjpg_streamer > /dev/null 2>&1
+cp -f ${TARGET_DIR}/usr/lib/mjpg-streamer/input_uvc.so ${BASE_DIR}/updater/rootfs/usr/lib/mjpg-streamer/input_uvc.so > /dev/null 2>&1
 
 pushd ${BASE_DIR}/updater/ > /dev/null 2>&1
 

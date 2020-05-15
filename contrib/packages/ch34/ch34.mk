@@ -1,8 +1,8 @@
 CH34_MODULE_VERSION = 1.0
-#CH34_SITE = /home/gerner_terner/repo/nuc970-buildroot-master/nuc970-buildroot/contrib/packages/ch34/src
+#CH34_SITE = /home/gernerterner/repo/nuc970-buildroot-master/nuc970-buildroot/contrib/packages/ch34/src
 #CH34_SITE_METHOD = local
 
-CH34_OVERRIDE_SRCDIR = /home/gerner_terner/repo/nuc970-buildroot-master/nuc970-buildroot/contrib/packages/ch34/src
+CH34_OVERRIDE_SRCDIR = /home/gernerterner/repo/nuc970-buildroot-master/nuc970-buildroot/contrib/packages/ch34/src
 CH34_OVERRIDE_RSYNC = yes
 
 #CH34_LICENSE = GPLv2

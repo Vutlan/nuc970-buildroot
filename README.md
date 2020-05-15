@@ -29,8 +29,8 @@ for more information use:
 
 1) проверить директории проекта в файле buildroot/Makefile
 # projects place here
-SKY_LOCAL_ROOT = /home/gerner_terner/repo/nuc970-buildroot-master/nuc970-buildroot
-SKY_XMON_ROOT = /home/gerner_terner/repo/XMON/XMON-release
+SKY_LOCAL_ROOT = /home/gernerterner/repo/nuc970-buildroot-master/nuc970-buildroot
+SKY_XMON_ROOT = /home/gernerterner/repo/XMON/XMON-release
 
 2) подготовка, создание директории output/
 ./setup.sh

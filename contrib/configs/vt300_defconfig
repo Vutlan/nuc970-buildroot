@@ -3,6 +3,11 @@
 # Buildroot 2016.08-git Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
+BR2_HOST_GCC_AT_LEAST_4_6=y
+BR2_HOST_GCC_AT_LEAST_4_7=y
+BR2_HOST_GCC_AT_LEAST_4_8=y
+BR2_HOST_GCC_AT_LEAST_4_9=y
+BR2_HOST_GCC_AT_LEAST_5=y
 
 #
 # Target options
@@ -713,10 +718,7 @@ BR2_PACKAGE_MTD_MTDINFO=y
 #
 # BR2_PACKAGE_CEGUI06 is not set
 # BR2_PACKAGE_DIRECTFB is not set
-
-#
-# efl needs udev /dev management and a toolchain w/ C++, dynamic library, gcc >= 4.7, threads, wchar
-#
+# BR2_PACKAGE_EFL is not set
 # BR2_PACKAGE_FBDUMP is not set
 # BR2_PACKAGE_FBGRAB is not set
 # BR2_PACKAGE_FBSET is not set
@@ -922,10 +924,7 @@ BR2_PACKAGE_LUAJIT_ARCH_SUPPORTS=y
 # BR2_PACKAGE_MOARVM is not set
 BR2_PACKAGE_MONO_ARCH_SUPPORTS=y
 # BR2_PACKAGE_MONO is not set
-
-#
-# nodejs needs a toolchain w/ C++, dynamic library, threads, gcc >= 4.8, wchar
-#
+# BR2_PACKAGE_NODEJS is not set
 # BR2_PACKAGE_PERL is not set
 # BR2_PACKAGE_PHP is not set
 # BR2_PACKAGE_PYTHON is not set
@@ -1046,7 +1045,9 @@ BR2_PACKAGE_OPENSSL_ENGINES=y
 #
 BR2_PACKAGE_SQLITE=y
 # BR2_PACKAGE_SQLITE_STAT3 is not set
+# BR2_PACKAGE_SQLITE_ENABLE_COLUMN_METADATA is not set
 # BR2_PACKAGE_SQLITE_ENABLE_FTS3 is not set
+# BR2_PACKAGE_SQLITE_ENABLE_JSON1 is not set
 # BR2_PACKAGE_SQLITE_ENABLE_UNLOCK_NOTIFY is not set
 # BR2_PACKAGE_SQLITE_SECURE_DELETE is not set
 # BR2_PACKAGE_SQLITE_NO_SYNC is not set
@@ -2503,7 +2504,7 @@ BR2_PACKAGE_XMON_VUTLAN=y
 # BR2_PACKAGE_XMON_DIDACTUM is not set
 # BR2_PACKAGE_XMON_BKT is not set
 # BR2_PACKAGE_XMON_SCHAFER is not set
-# BR2_PACKAGE_XMON_LANDE is not set
+# BR2_PACKAGE_XMON_RZPRODUCTS is not set
 BR2_PACKAGE_ZIC=y
 BR2_PACKAGE_HOST_NUCPACKGEN=y
 BR2_PACKAGE_CH34=y

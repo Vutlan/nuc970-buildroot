@@ -3,6 +3,8 @@
 IMAGES_PATH=./output/images
 NFS_PATH=/var/lib/tftpboot/nuc970
 
+mkdir -p ${NFS_PATH}/rootfs/
+
 sudo cp -f ${IMAGES_PATH}/uImage ${NFS_PATH}
 
 sudo rm -fR ${NFS_PATH}/rootfs/*
