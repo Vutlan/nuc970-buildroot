@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "*************************************************"
-echo "* Script for make kernel update (script ver.1.4)"
+echo "* Script for make kernel update (script ver.1.7)"
 echo "*   tools: ${BR2_EXTERNAL}/updater"
 echo "*   rootfs: ${TARGET_DIR}"
 echo "*   output: ${BASE_DIR}"
@@ -37,6 +37,13 @@ rsync -avzh ${TARGET_DIR}/bin ${KERNEL_DIR}/rootfs > /dev/null 2>&1
 # only busybox links ?
 #mkdir -p ${KERNEL_DIR}/rootfs/sbin
 #rsync -avzh ${TARGET_DIR}/sbin ${KERNEL_DIR}/rootfs > /dev/null 2>&1
+
+# nginx config
+mkdir -p ${KERNEL_DIR}/rootfs/etc/nginx
+rsync -avzh ${TARGET_DIR}/etc/nginx ${KERNEL_DIR}/rootfs/etc > /dev/null 2>&1
+mkdir -p ${KERNEL_DIR}/rootfs/opt/xmon/etc/nginx
+cp -f ${TARGET_DIR}/opt/xmon/etc/nginx/webui2 ${KERNEL_DIR}/rootfs/opt/xmon/etc/nginx/webui2
+cp -f ${TARGET_DIR}/opt/xmon/etc/nginx/webui_safemode ${KERNEL_DIR}/rootfs/opt/xmon/etc/nginx/webui_safemode
 
 mkdir -p ${KERNEL_DIR}/rootfs/usr/bin
 #rsync -avzh ${TARGET_DIR}/usr/bin ${KERNEL_DIR}/rootfs/usr > /dev/null 2>&1

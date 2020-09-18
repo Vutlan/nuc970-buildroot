@@ -34,6 +34,10 @@ ifeq ($(BR2_PACKAGE_XMON_RZPRODUCTS),y)
   XMON_CONF_OPTS += -DXMON_BRANDNAME="rzproducts"
 endif
 
+ifeq ($(BR2_PACKAGE_XMON_TRIPPLITE),y)
+  XMON_CONF_OPTS += -DXMON_BRANDNAME="tripplite"
+endif
+
 #define XMON_INSTALL_STAGING_CMDS
 #        echo "Install staging"
 #        $(MAKE) install

@@ -1,17 +1,19 @@
 #!/bin/bash
 
 echo "*************************************************"
-echo "* Script for prebuild (script ver.1.0)"
+echo "* Script for postbuild (script ver.1.0)"
 echo "*   target: ${TARGET_DIR}"
 echo "*************************************************"
 
+# check dependencies (S50nginx)
 #KERNEL_VERSION_STAMP="01.02.2019"
 #KERNEL_VERSION_STAMP="12.03.2019"
 #KERNEL_VERSION_STAMP="30.04.2019"
 #KERNEL_VERSION_STAMP="20.05.2019"
 #KERNEL_VERSION_STAMP="17.06.2019"
 #KERNEL_VERSION_STAMP="11.07.2019"
-KERNEL_VERSION_STAMP="18.09.2019"
+#KERNEL_VERSION_STAMP="18.09.2019"
+KERNEL_VERSION_STAMP="17.08.2020"
 
 # push kernel version stamp
 echo "    Vutlan kernel version stamp: ${KERNEL_VERSION_STAMP}"

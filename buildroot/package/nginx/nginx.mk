@@ -275,6 +275,8 @@ endef
 define NGINX_INSTALL_INIT_SYSV
 	$(INSTALL) -D -m 0755 package/nginx/S50nginx \
 		$(TARGET_DIR)/etc/init.d/S50nginx
+	$(INSTALL) -D -m 0755 package/nginx/nginx.conf \
+		$(TARGET_DIR)/etc/nginx/nginx.conf
 endef
 
 $(eval $(generic-package))

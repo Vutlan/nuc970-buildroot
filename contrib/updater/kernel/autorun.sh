@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "******************************************"
-echo "* Kernel Update (script ver.1.4)"
+echo "* Kernel Update (script ver.1.6)"
 echo "******************************************"
 
 ./led_error.sh 10000 &
@@ -61,6 +61,12 @@ safe_copy rootfs/etc/shadow         /etc/shadow 600
 echo "  update /etc/init.d/"
 rm -fR /etc/init.d/
 cp -af rootfs/etc/init.d/ /etc/
+
+echo "  update nginx config"
+rm -fR /etc/nginx/
+cp -af rootfs/etc/nginx/ /etc/
+safe_copy rootfs/opt/xmon/etc/nginx/webui2     /opt/xmon/etc/nginx/webui2 644
+safe_copy rootfs/opt/xmon/etc/nginx/webui_safemode     /opt/xmon/etc/nginx/webui_safemode 644
 
 echo "  update /bin/busybox"
 safe_copy rootfs/bin/busybox        /bin/busybox 755
