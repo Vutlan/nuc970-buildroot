@@ -165,7 +165,6 @@ run_safe()
     rm -f ${NGINX_CONF_USER}
     #rm -f ${NGINX_MEDIA_PASSWD_FILE}
     rm -f ${NGINX_CONF_CAM_PROXY}
-    rm -f ${MEDIA_PROXY_CONF}
 
     # add safemode version link
     if [ ! -e "/etc/nginx/sites-enabled/webui_safemode" ] ; then 
